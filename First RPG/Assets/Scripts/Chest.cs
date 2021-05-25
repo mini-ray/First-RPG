@@ -12,7 +12,7 @@ public class Chest : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        chest = GameObject.Find("Chest").GetComponent<Chest>();
+        //chest = GameObject.Find("Chest").GetComponent<Chest>();
 
         mater = GetComponent<Animator>();
     }
@@ -20,16 +20,18 @@ public class Chest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mater.SetBool("open", true);
+        //mater.SetBool("open", true);
 
-        if (chest.open)
-        {
-            mater.SetBool("open", true);
-            Debug.Log("chest is open");
-        }
-        if (!chest.open)
-        {
-            mater.SetBool("open", false);
-        }
+        //if (chest.open)
+        //{
+        //    mater.SetBool("open", true);
+        //    Debug.Log("chest is open");
+        //}
+        //if (!chest.open)
+        //{
+        //    Debug.Log("chest is closed");
+        //    mater.SetBool("open", false);
+        //    
+        //}
     }
 }
