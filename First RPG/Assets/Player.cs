@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
+        //Debug.Log("Touching");
         var item = other.GetComponent<GroundItem>();
         if (item)
         {
@@ -20,19 +21,26 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown("o"))
         {
             inventory.Save();
+            Debug.Log("Inventory Saved");
         }
-        if (Input.GetKeyDown(KeyCode.KeypadEnter))
+        if (Input.GetKeyDown("p"))
         {
             inventory.Load();
+            Debug.Log("Inventory Loaded");
         }
     }
 
+    //private void OnApplicationAwake()
+    //{
+    //    inventory.Container.Items = new InventorySlot[5];
+    //}
+
     private void OnApplicationQuit()
     {
-        inventory.Container.Items = new InventorySlot[28];
+        inventory.Container.Items = new InventorySlot[36];
     }
 
 }
