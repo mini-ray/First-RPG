@@ -15,5 +15,9 @@ MonoBehaviour:
   Id: 4
   uiDisplay: {fileID: -5365385695610608141, guid: ce26433da4f808f429c2293deb9cb86d, type: 3}
   type: 2
-  description: Your trusty pal hack and slash.
-  buffs: []
+  description: Hack and slash 2.0.
+  buffs:
+  - attribute: 3
+    value: 0
+    min: 5
+    max: 13

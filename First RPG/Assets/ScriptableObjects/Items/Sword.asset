@@ -16,4 +16,8 @@ MonoBehaviour:
   uiDisplay: {fileID: 3495713834309950518, guid: ce26433da4f808f429c2293deb9cb86d, type: 3}
   type: 2
   description: Your trusty pal hack and slash.
-  buffs: []
+  buffs:
+  - attribute: 3
+    value: 0
+    min: 3
+    max: 8
