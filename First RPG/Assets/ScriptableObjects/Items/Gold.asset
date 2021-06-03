@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9f97a4a0f067949aaf56ed12e0d1e2, type: 3}
   m_Name: Gold
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  Id: 2
+  uiDisplay: {fileID: 2141563591757456033, guid: ce26433da4f808f429c2293deb9cb86d, type: 3}
   type: 2
   description: The riches of your dreams.
+  buffs: []

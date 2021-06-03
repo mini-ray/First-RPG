@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 314794d1ddac01741a6bcbf6df3e8783, type: 3}
   m_Name: Sword 1
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
-  type: 1
+  Id: 4
+  uiDisplay: {fileID: -5365385695610608141, guid: ce26433da4f808f429c2293deb9cb86d, type: 3}
+  type: 2
   description: Your trusty pal hack and slash.
-  atkBonus: 20
-  defenceBonus: 1
+  buffs: []

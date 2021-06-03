@@ -18,6 +18,7 @@ public class InventoryObject : ScriptableObject
 
     public void AddItem(Item _item, int _amount)
     {
+        Debug.Log(_item.Id + " adding item");
         if (_item.buffs.Length > 0)
         {
             SetEmptySlot(_item, _amount);
@@ -26,8 +27,10 @@ public class InventoryObject : ScriptableObject
 
         for (int i = 0; i < Container.Items.Length; i++)
         {
+            Debug.Log(Container.Items[i].item.Id + " checking id");
             if (Container.Items[i].ID == _item.Id)
             {
+                Debug.Log(_item.Id + "adding amount");
                 Container.Items[i].AddAmount(_amount);
                 return;
             }
@@ -49,14 +52,37 @@ public class InventoryObject : ScriptableObject
         return null;
     }
 
+    public void MoveItem(InventorySlot item1, InventorySlot item2)
+    {
+        InventorySlot temp = new InventorySlot(item2.ID, item2.item, item2.amount);
+        item2.UpdateSlot(item1.ID, item1.item, item1.amount);
+        item1.UpdateSlot(temp.ID, temp.item, temp.amount);
+    }
+
+    public void RemoveItem(Item _item)
+    {
+        for (int i = 0; i < Container.Items.Length; i++)
+        {
+            if(Container.Items[i].item == _item)
+            {
+                Container.Items[i].UpdateSlot(-1, null, 0);
+            }
+        }
+    }
+
     [ContextMenu("Save")]
     public void Save()
     {
-        string saveData = JsonUtility.ToJson(this, true);
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(string.Concat(Application.persistentDataPath, savePath));
-        bf.Serialize(file, saveData);
-        file.Close();
+        //string saveData = JsonUtility.ToJson(this, true);
+        //BinaryFormatter bf = new BinaryFormatter();
+        //FileStream file = File.Create(string.Concat(Application.persistentDataPath, savePath));
+        //bf.Serialize(file, saveData);
+        //file.Close();
+
+        IFormatter formatter = new BinaryFormatter();
+        Stream stream = new FileStream(string.Concat(Application.persistentDataPath, savePath), FileMode.Create, FileAccess.Write);
+        formatter.Serialize(stream, Container);
+        stream.Close();
     }
 
     [ContextMenu("Load")]
@@ -64,10 +90,19 @@ public class InventoryObject : ScriptableObject
     {
         if (File.Exists(string.Concat(Application.persistentDataPath, savePath)))
         {
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(string.Concat(Application.persistentDataPath, savePath), FileMode.Open);
-            JsonUtility.FromJsonOverwrite(bf.Deserialize(file).ToString(), this);
-            file.Close();
+            //BinaryFormatter bf = new BinaryFormatter();
+            //FileStream file = File.Open(string.Concat(Application.persistentDataPath, savePath), FileMode.Open);
+            //JsonUtility.FromJsonOverwrite(bf.Deserialize(file).ToString(), this);
+            //file.Close();
+
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream(string.Concat(Application.persistentDataPath, savePath), FileMode.Open, FileAccess.Read);
+            Inventory newContainer = (Inventory)formatter.Deserialize(stream);
+            for (int i = 0; i < Container.Items.Length; i++)
+            {
+                Container.Items[i].UpdateSlot(newContainer.Items[i].ID, newContainer.Items[i].item, newContainer.Items[i].amount);
+            }
+            stream.Close();
         }
     }
 
@@ -88,9 +123,12 @@ public class Inventory
 [System.Serializable]
 public class InventorySlot
 {
+    
+    public UserInterface parent;
     public int ID = -1;
     public Item item;
     public int amount;
+    public ItemType[] AllowedItems = new ItemType[0];
     public InventorySlot()
     {
         ID = -1;
@@ -115,5 +153,17 @@ public class InventorySlot
     public void AddAmount(int value)
     {
         amount += value;
+    }
+
+    public bool CanPlaceInSlot(ItemObject _item)
+    {
+        if(AllowedItems.Length <= 0)
+            return true;
+        for (int i = 0; i < AllowedItems.Length; i++)
+        {
+            if (_item.type == AllowedItems[i])
+                return true;
+        }
+        return false;
     }
 }
