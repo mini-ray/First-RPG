@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 314794d1ddac01741a6bcbf6df3e8783, type: 3}
   m_Name: Helmet
   m_EditorClassIdentifier: 
-  Id: 0
   uiDisplay: {fileID: -7296337056529428220, guid: ce26433da4f808f429c2293deb9cb86d, type: 3}
+  stackable: 0
   type: 1
   description: Designed to prevent the splattering of brains.
-  buffs:
-  - attribute: 1
-    value: 0
-    min: 3
-    max: 5
+  data:
+    Name: 
+    Id: 9
+    buffs: []
