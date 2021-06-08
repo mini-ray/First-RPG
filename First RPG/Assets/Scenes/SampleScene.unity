@@ -2010,7 +2010,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 8037a798a961f8f40a5f96aa53b0f32e, type: 2}
-  equipment: {fileID: 0}
+  equipment: {fileID: 11400000, guid: 4518f83d06db3b841a4f2f8d0b1146a0, type: 2}
+  attributes: []
 --- !u!4 &869465252 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 408730, guid: 7737647c22c1fc64a88d5cd030c352ce, type: 3}

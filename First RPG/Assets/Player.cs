@@ -8,6 +8,21 @@ public class Player : MonoBehaviour
     public InventoryObject inventory;
     public InventoryObject equipment;
 
+    public Attribute[] attributes;
+
+    private void Start()
+    {
+        for(int i = 0; i < equipment.GetSlots.Length; i++)
+        {
+            attributes[i].SetParent(this);
+        }
+        for(int i = 0; i < equipment.GetSlots.Length; i++)
+        {
+            //equipment.GetSlots[i].OnBeforeUpdate += OnBeforeSlotUpdate;
+            //equipment.GetSlots[i].OnAfterUpdate += OnAfterSlotUpdate;
+        }
+    }
+
     public void OnTriggerEnter(Collider other)
     {
         //Debug.Log("Touching");
@@ -28,14 +43,19 @@ public class Player : MonoBehaviour
         {
             inventory.Save();
             equipment.Save();
-            Debug.Log("Inventory Saved");
+            //Debug.Log("Inventory Saved");
         }
         if (Input.GetKeyDown("p"))
         {
             inventory.Load();
             equipment.Load();
-            Debug.Log("Inventory Loaded");
+            //Debug.Log("Inventory Loaded");
         }
+    }
+
+    public void AttributeModified(Attribute attribute)
+    {
+        Debug.Log(string.Concat(attribute.type, "was updated! Value is now ", attribute.value.ModifiedValue));
     }
 
     //private void OnApplicationAwake()
@@ -45,8 +65,27 @@ public class Player : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        inventory.Container.Clear();
-        equipment.Container.Clear();
+        inventory.Clear();
+        equipment.Clear();
+    }
+}
+
+[System.Serializable]
+public class Attribute
+{
+    [System.NonSerialized]
+    public Player parent;
+    public Attributes type;
+    public ModifiableInt value;
+
+    public void SetParent(Player _parent)
+    {
+        parent = _parent;
+        value = new ModifiableInt(AttributeModified);
     }
 
+    public void AttributeModified()
+    {
+        parent.AttributeModified(this);
+    }
 }
