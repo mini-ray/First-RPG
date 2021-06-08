@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7207171fb70bd384eaa6dc2929cb3f29, type: 3}
   m_Name: Bread
   m_EditorClassIdentifier: 
-  Id: 1
   uiDisplay: {fileID: 4488543362745833415, guid: ce26433da4f808f429c2293deb9cb86d, type: 3}
+  stackable: 1
   type: 0
   description: One of the building block of civilization.
-  buffs: []
+  data:
+    Name: 
+    Id: 1
+    buffs: []
   restoreHealthValue: 15

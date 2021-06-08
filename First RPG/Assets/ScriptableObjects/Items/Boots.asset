@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 314794d1ddac01741a6bcbf6df3e8783, type: 3}
   m_Name: Boots
   m_EditorClassIdentifier: 
-  Id: 0
   uiDisplay: {fileID: 7431443166627799094, guid: ce26433da4f808f429c2293deb9cb86d, type: 3}
+  stackable: 0
   type: 4
   description: These shoes were made for walking.
-  buffs:
-  - attribute: 0
-    value: 0
-    min: 5
-    max: 15
+  data:
+    Name: 
+    Id: 7
+    buffs: []
