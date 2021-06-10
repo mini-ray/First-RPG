@@ -91,7 +91,7 @@ public abstract class UserInterface : MonoBehaviour
         GameObject tempItem = null;
         if(slotsOnInterface[obj].item.Id >= 0)
         {
-            var mouseObject = new GameObject();
+            tempItem = new GameObject();
             var rt = tempItem.AddComponent<RectTransform>();
             rt.sizeDelta = new Vector2(30, 30);
             tempItem.transform.SetParent(transform.parent);
