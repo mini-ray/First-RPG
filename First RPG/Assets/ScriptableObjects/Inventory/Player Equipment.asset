@@ -13,150 +13,61 @@ MonoBehaviour:
   m_Name: Player Equipment
   m_EditorClassIdentifier: 
   savePath: /equipment.Save
-  database: {fileID: 11400000, guid: 406a30083795ef44cb612042b28b7ba0, type: 2}
+  type: 1
   Container:
     Slots:
-    - AllowedItems: 
-      item:
+    - item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
-    - AllowedItems: 
-      item:
+      AllowedItems: 01000000
+    - item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
-    - AllowedItems: 
-      item:
+      AllowedItems: 05000000
+    - item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
-    - AllowedItems: 
-      item:
+      AllowedItems: 07000000
+    - item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
-    - AllowedItems: 
-      item:
+      AllowedItems: 06000000
+    - item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
-    - AllowedItems: 
-      item:
+      AllowedItems: 04000000
+    - item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
-    - AllowedItems: 
-      item:
+      AllowedItems: 02000000
+    - item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
-    - AllowedItems: 
-      item:
+      AllowedItems: 0200000003000000
+    - item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
-    - AllowedItems: 
-      item:
+      AllowedItems: 08000000
+    - item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
-    - AllowedItems: 
-      item:
-        Name: 
-        Id: -1
-        buffs: []
-      amount: 0
-    - AllowedItems: 
-      item:
-        Name: 
-        Id: -1
-        buffs: []
-      amount: 0
-    - AllowedItems: 
-      item:
-        Name: 
-        Id: -1
-        buffs: []
-      amount: 0
-    - AllowedItems: 
-      item:
-        Name: 
-        Id: -1
-        buffs: []
-      amount: 0
-    - AllowedItems: 
-      item:
-        Name: 
-        Id: -1
-        buffs: []
-      amount: 0
-    - AllowedItems: 
-      item:
-        Name: 
-        Id: -1
-        buffs: []
-      amount: 0
-    - AllowedItems: 
-      item:
-        Name: 
-        Id: -1
-        buffs: []
-      amount: 0
-    - AllowedItems: 
-      item:
-        Name: 
-        Id: -1
-        buffs: []
-      amount: 0
-    - AllowedItems: 
-      item:
-        Name: 
-        Id: -1
-        buffs: []
-      amount: 0
-    - AllowedItems: 
-      item:
-        Name: 
-        Id: -1
-        buffs: []
-      amount: 0
-    - AllowedItems: 
-      item:
-        Name: 
-        Id: -1
-        buffs: []
-      amount: 0
-    - AllowedItems: 
-      item:
-        Name: 
-        Id: -1
-        buffs: []
-      amount: 0
-    - AllowedItems: 
-      item:
-        Name: 
-        Id: -1
-        buffs: []
-      amount: 0
-    - AllowedItems: 
-      item:
-        Name: 
-        Id: -1
-        buffs: []
-      amount: 0
-    - AllowedItems: 
-      item:
-        Name: 
-        Id: -1
-        buffs: []
-      amount: 0
+      AllowedItems: 09000000
+  database: {fileID: 11400000, guid: 406a30083795ef44cb612042b28b7ba0, type: 2}

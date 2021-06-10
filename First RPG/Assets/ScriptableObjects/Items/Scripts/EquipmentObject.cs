@@ -11,5 +11,13 @@ public class EquipmentObject : ItemObject
     public void Awake()
     {
         type = ItemType.Chest;
+        type = ItemType.Legs;
+        type = ItemType.Helmet;
+        type = ItemType.Boots;
+        type = ItemType.Belt;
+        type = ItemType.Gloves;
+        type = ItemType.Backpack;
+        type = ItemType.Shield;
+        type = ItemType.Weapon;
     }
 }

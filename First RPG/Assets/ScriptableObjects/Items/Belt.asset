@@ -15,8 +15,16 @@ MonoBehaviour:
   uiDisplay: {fileID: 7003715593917701308, guid: ce26433da4f808f429c2293deb9cb86d, type: 3}
   stackable: 0
   type: 7
-  description: Hopefully not the only thing keeping your pants up.
+  description: Probably the only thing keeping your pants up.
   data:
     Name: 
     Id: 0
-    buffs: []
+    buffs:
+    - attribute: 0
+      value: 0
+      min: 5
+      max: 15
+    - attribute: 1
+      value: 0
+      min: 5
+      max: 15

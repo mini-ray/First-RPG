@@ -6,20 +6,31 @@ using System.IO;
 using UnityEditor;
 using System.Runtime.Serialization;
 
+public enum InterfaceType
+{
+    Inventory,
+    Equipment,
+    Chest
+}
+
 [CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory System/Inventory")]
 
 public class InventoryObject : ScriptableObject
 {
     public string savePath;
-    public ItemDatabaseObject database;
+    public InterfaceType type;
     public Inventory Container;
     public InventorySlot[] GetSlots { get { return Container.Slots; } }
+    public ItemDatabaseObject database;
 
 
     public bool AddItem(Item _item, int _amount)
     {
         if (EmptyslotCount <= 0)
+        {
+            Debug.Log("false");
             return false;
+        }
         InventorySlot slot = FindItemOnInventory(_item);
         if(!database.ItemsObjects[_item.Id].stackable || slot == null)
         {
@@ -30,8 +41,6 @@ public class InventoryObject : ScriptableObject
         return true;
     }
 
-    
-    
     public int EmptyslotCount
     {
         get
@@ -155,7 +164,6 @@ public delegate void SlotUpdated(InventorySlot _slot);
 [System.Serializable]
 public class InventorySlot
 {
-    public ItemType[] AllowedItems = new ItemType[0];
     [System.NonSerialized]
     public UserInterface parent;
     [System.NonSerialized]
@@ -166,7 +174,8 @@ public class InventorySlot
     public SlotUpdated OnBeforeUpdate;
     public Item item = new Item();
     public int amount;
-    
+    public ItemType[] AllowedItems = new ItemType[0];
+
     public ItemObject ItemObject
     {
         get
@@ -186,7 +195,7 @@ public class InventorySlot
 
     public InventorySlot(Item _item, int _amount)
     {
-        UpdateSlot(new Item(), 0);
+        UpdateSlot(_item, _amount);
     }
 
     public void UpdateSlot(Item _item, int _amount)
