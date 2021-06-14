@@ -9,26 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 314794d1ddac01741a6bcbf6df3e8783, type: 3}
+  m_Script: {fileID: 11500000, guid: 5abc1fa4776434e4fb6be9a10e2f4c23, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
   uiDisplay: {fileID: 3495713834309950518, guid: ce26433da4f808f429c2293deb9cb86d, type: 3}
   stackable: 0
   type: 2
-  description: Your trusty pal hack and slash.
+  description: 
   data:
     Name: 
     Id: 10
-    buffs:
-    - attribute: 0
-      value: 0
-      min: 5
-      max: 13
-    - attribute: 2
-      value: 0
-      min: 10
-      max: 18
-    - attribute: 3
-      value: 0
-      min: 15
-      max: 25
+    buffs: []

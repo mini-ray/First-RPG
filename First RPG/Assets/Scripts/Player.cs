@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public GameObject CanvasObject;
 
+    public bool inventoryopen;
     public InventoryObject inventory;
     public InventoryObject equipment;
 
@@ -103,6 +105,33 @@ public class Player : MonoBehaviour
             inventory.Load();
             equipment.Load();
             //Debug.Log("Inventory Loaded");
+        }
+
+        OpenInventory();
+
+        if(inventoryopen == true)
+        {
+            CanvasObject.GetComponent<Canvas>().enabled = true;
+            //Debug.Log("Inventory Open");
+        }
+        if (inventoryopen == false)
+        {
+            CanvasObject.GetComponent<Canvas>().enabled = false;
+            //Debug.Log("Inventory Closed");
+        }
+    }
+
+    public void OpenInventory()
+    {
+        if (inventoryopen = false && Input.GetKeyUp(KeyCode.E))
+        {
+            inventoryopen = true;
+            Debug.Log("E");
+        }
+        if(inventoryopen = true && Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Escape))
+        {
+            inventoryopen = false;
+            Debug.Log("E");
         }
     }
 
