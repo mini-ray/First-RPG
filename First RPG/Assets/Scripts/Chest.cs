@@ -14,6 +14,9 @@ public class Chest : MonoBehaviour
     
     public GameObject CanvasObject;
 
+    public InventoryObject inventory;
+    public InventoryObject chestInventory;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,7 +55,7 @@ public class Chest : MonoBehaviour
         float distance = Vector3.Distance(character.transform.position, transform.position);
         Debug.Log(distance);
 
-        if (distance <= 5 && Input.GetButtonDown("Fire2"))
+        if (distance <= 5/* && Input.GetButtonDown("Fire2")*/)
             mater.SetBool("open", true);
     }
 }

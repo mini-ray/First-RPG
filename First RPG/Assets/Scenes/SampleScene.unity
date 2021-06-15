@@ -1488,28 +1488,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 322263229}
   m_CullTransparentMesh: 1
---- !u!1 &339785147 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2032658513150022273, guid: a3c9312c611a39a49a9e64e3fd5e51cf, type: 3}
-  m_PrefabInstance: {fileID: 847481778658143963}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &339785152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 339785147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e589f2cdd8f9bb1488ae8879a934ca6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CanvasObject: {fileID: 429734392}
-  inventoryopen: 0
-  inventory: {fileID: 11400000, guid: 8037a798a961f8f40a5f96aa53b0f32e, type: 2}
-  equipment: {fileID: 11400000, guid: 4bdf9ea6a30d1b246b439ad93d639913, type: 2}
-  attributes: []
 --- !u!1 &370490911
 GameObject:
   m_ObjectHideFlags: 0
@@ -2325,7 +2303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e589f2cdd8f9bb1488ae8879a934ca6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CanvasObject: {fileID: 130421941}
+  playerInventory: {fileID: 130421941}
   inventoryopen: 0
   inventory: {fileID: 11400000, guid: 8037a798a961f8f40a5f96aa53b0f32e, type: 2}
   equipment: {fileID: 11400000, guid: 4518f83d06db3b841a4f2f8d0b1146a0, type: 2}
@@ -5807,9 +5785,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1727033794352118878}
     - target: {fileID: 1727033794352118878, guid: a3c9312c611a39a49a9e64e3fd5e51cf, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 11400000, guid: 8037a798a961f8f40a5f96aa53b0f32e, type: 2}
+    - target: {fileID: 1727033794352118878, guid: a3c9312c611a39a49a9e64e3fd5e51cf, type: 3}
       propertyPath: CanvasObject
       value: 
       objectReference: {fileID: 429734392}
+    - target: {fileID: 1727033794352118878, guid: a3c9312c611a39a49a9e64e3fd5e51cf, type: 3}
+      propertyPath: chestInventory
+      value: 
+      objectReference: {fileID: 11400000, guid: 4bdf9ea6a30d1b246b439ad93d639913, type: 2}
     - target: {fileID: 2032658513150022273, guid: a3c9312c611a39a49a9e64e3fd5e51cf, type: 3}
       propertyPath: m_Name
       value: Medieval_Chest(1)
@@ -5821,7 +5807,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1727033794352118878, guid: a3c9312c611a39a49a9e64e3fd5e51cf, type: 3}
   m_PrefabInstance: {fileID: 847481778658143963}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 339785147}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41e7c85b135e35d45b9533d9b706289e, type: 3}

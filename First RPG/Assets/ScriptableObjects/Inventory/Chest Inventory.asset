@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a76320fd451d1a478664f4f0bc1315a, type: 3}
   m_Name: Chest Inventory
   m_EditorClassIdentifier: 
-  savePath: 
+  savePath: /chest.Save
   type: 2
   Container:
     Slots:
@@ -155,9 +155,17 @@ MonoBehaviour:
       amount: 0
       AllowedItems: 
     - item:
-        Name: 
-        Id: -1
-        buffs: []
-      amount: 0
+        Name: Boots
+        Id: 1
+        buffs:
+        - attribute: 0
+          value: 14
+          min: 5
+          max: 15
+        - attribute: 0
+          value: 7
+          min: 5
+          max: 15
+      amount: 1
       AllowedItems: 
   database: {fileID: 0}

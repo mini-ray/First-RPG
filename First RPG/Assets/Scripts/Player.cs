@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public GameObject CanvasObject;
+    public GameObject playerInventory;
 
     public bool inventoryopen;
     public InventoryObject inventory;
@@ -111,26 +111,28 @@ public class Player : MonoBehaviour
 
         if(inventoryopen == true)
         {
-            CanvasObject.GetComponent<Canvas>().enabled = true;
+            playerInventory.gameObject.SetActive(true);
             //Debug.Log("Inventory Open");
         }
         if (inventoryopen == false)
         {
-            CanvasObject.GetComponent<Canvas>().enabled = false;
+            playerInventory.gameObject.SetActive(false);
             //Debug.Log("Inventory Closed");
         }
     }
 
     public void OpenInventory()
     {
-        if (inventoryopen = false && Input.GetKeyUp(KeyCode.E))
+        if (inventoryopen == false && Input.GetKeyDown(KeyCode.E))
         {
             inventoryopen = true;
+            
             Debug.Log("E");
         }
-        if(inventoryopen = true && Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.Escape))
+        if(inventoryopen == true && /*Input.GetKeyDown(KeyCode.E) || */Input.GetKeyDown(KeyCode.Escape))
         {
             inventoryopen = false;
+            
             Debug.Log("E");
         }
     }
