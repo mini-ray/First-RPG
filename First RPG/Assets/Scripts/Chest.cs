@@ -12,7 +12,10 @@ public class Chest : MonoBehaviour
 
     
     
-    public GameObject CanvasObject;
+    public GameObject boxInventory;
+
+    //public GameObject playerInventory;
+    //public GameObject boxInventory;
 
     public InventoryObject inventory;
     public InventoryObject chestInventory;
@@ -36,15 +39,17 @@ public class Chest : MonoBehaviour
 
         if (chest.open)
         {
+            //playerInventory.gameObject.SetActive(true);
+            //boxInventory.GetComponent<Canvas>().enabled = true;
             mater.SetBool("open", true);
-            CanvasObject.GetComponent<Canvas>().enabled = true;
+            boxInventory.gameObject.SetActive(true);
             //Debug.Log("chest is open");
         }
         else if (!chest.open)
         {
             //Debug.Log("chest is closed");
             mater.SetBool("open", false);
-            CanvasObject.GetComponent<Canvas>().enabled = false;
+            boxInventory.gameObject.SetActive(false);
 
         }
     }

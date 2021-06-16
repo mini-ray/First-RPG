@@ -127,13 +127,13 @@ public class Player : MonoBehaviour
         {
             inventoryopen = true;
             
-            Debug.Log("E");
+            //Debug.Log("E");
         }
         if(inventoryopen == true && /*Input.GetKeyDown(KeyCode.E) || */Input.GetKeyDown(KeyCode.Escape))
         {
             inventoryopen = false;
             
-            Debug.Log("E");
+            //Debug.Log("E");
         }
     }
 
